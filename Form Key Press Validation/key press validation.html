@@ -1,0 +1,37 @@
+<style type="text/css">
+	.red{color: red;}
+	.green{color: green;}
+</style>
+<h2>Form Key Press Validation</h2>
+<form>
+	<input type="text" id="name">
+	<div id="err"></div>
+	<input type="button" name="btn" id="btn" disabled="true" value="Submit">
+</form>
+
+<script type="text/javascript">
+	let pincode = document.getElementById('name');
+	var err = document.getElementById('err');
+	var btn = document.getElementById('btn');
+	err.innerHTML="";
+	pincode.addEventListener('keyup',function(e){
+	var len = pincode.value.length;
+		
+		if (e.which >47 && e.which<58) {
+			if (len == 5) {
+				err.innerHTML = '<div class="green">Perfect</div>';
+				btn.removeAttribute('disabled');
+			}
+			else
+			{
+				err.innerHTML = '<div class="red">Only 6 digits are Required</div>';
+				btn.setAttribute('disabled','true');
+			}
+		   
+		}
+		else{
+			err.innerHTML = '<div class="red">Only Numeric Characters are allowed</div>';
+			btn.setAttribute('disabled','true');
+		}
+	});
+</script>

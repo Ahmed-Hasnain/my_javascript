@@ -1,0 +1,29 @@
+<form id="frm">
+	<label>Name</label>
+	<input type="text" name="name" id="name">
+</form>
+
+<div id="box"></div>
+
+<script type="text/javascript">
+	let name= document.getElementById('frm');
+	// name.addEventListener('input',function(){
+	// 	if (this.value == "") {
+	// 		document.getElementById('box').innerHTML= "";
+	// 	}
+	// 	else{
+	// 		document.getElementById('box').innerHTML= "Welcome "+this.value;
+	// 	}
+	
+	// 	console.log(this.value);
+	// });
+
+
+	name.addEventListener('submit',function(){
+		
+			alert('Hello Submit');	
+			
+	});
+
+
+</script>

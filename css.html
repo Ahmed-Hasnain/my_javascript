@@ -1,0 +1,50 @@
+
+<div id="txt" style="font-size: 40px;" class="box fast">Ahmed Hasnain</div>
+<input type="button" onclick="changeColorRed()" value="Red" >
+<input type="button" onclick="changeColorGreen()" value="Green" >
+<input type="button" onclick="getStyle()" value="Get Style" >
+<input type="button" onclick="toggleTest()" value="Toggle" >
+
+<script type="text/javascript">
+
+	function changeColorRed(){
+		let txt = document.getElementById('txt');
+		//Inline Style
+		//txt.style.color= "red";
+		//Style by Attribute
+		txt.setAttribute('style','color:red;font-size:50px');
+	}
+
+
+	function changeColorGreen(){
+		let txt = document.getElementById('txt');
+		//txt.style.color= "green";
+		txt.setAttribute('style','color:green');
+	}
+
+	function getStyle(){
+		let txt = document.getElementById('txt');
+		//txt.style.color= "green";
+		console.log(txt.style.fontSize);
+	}
+
+	function toggleTest(){
+		let txt = document.getElementById('txt');
+		txt.classList.toggle('test');
+	}
+
+
+	let txt = document.getElementById('txt');
+	//txt.className += " test";
+	//console.log(txt.className);
+
+	//txt.classList.add('test','test1','test2');
+	//txt.classList.remove('fast');
+	//txt.classList.replace('box','hello');
+
+
+	console.log(txt.classList);
+
+	
+	//txt.style.fontSize= "30px";
+</script>

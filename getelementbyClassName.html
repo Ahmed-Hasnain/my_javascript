@@ -1,0 +1,38 @@
+	
+	<div id="first">
+		<div class="name">Ahmed</div>
+		<div class="name">Hasnain</div>
+		<div class="name">zain</div>
+	</div>
+	
+	<div id="second">
+		<div class="name">umer</div>
+		<div class="name">usman</div>
+		<div class="name" id="muji">mujahid</div>
+		<div class="name">ali</div>
+	</div>
+
+	<ul >
+		<li>Ahmed</li>
+		<li id="list" class="li_class">Hasnain</li>
+		<li>Mughal</li>
+		<li>Shamsy</li>
+	</ul>
+	
+	<!-- <div class="age">Ahmed</div> -->
+
+	<script>
+		//let name = document.getElementsByClassName('name');
+		//let divId= document.getElementById('second');
+		//let name = divId.getElementsByTagName('div');
+		//name[0].innerHTML = "Mughal";
+		//let name = document.querySelectorAll('#second .name');
+		
+		// for (var i = 0; i < name.length; i++) {
+		// 	console.log(name[i].innerHTML);
+		// }
+		//let name= document.getElementById('list').getAttribute('class');
+		let name= document.getElementById('list').hasAttribute('class');
+		console.log(name);
+		
+	</script>

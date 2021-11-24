@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Learn Java Script</title>
+	<script type="text/javascript">
+
+	// Functions
+	// var x = function(){
+	// 	document.write('hello');
+	// }
+	// x();
+
+	// Popups
+	// alert('hello alert');
+
+	// var result = confirm("are you sure to delete this");
+	// if (result == true) {
+	// 	document.write('document deleted');
+	// }
+	// else{
+	// 	document.write('document not deleted');
+	// }
+
+	// var result = prompt("Please enter your name");
+	// document.write(result);
+
+	// String Functions
+	// var name= "Ahmed Hasnain Shumsy";
+	// document.write(name.search('Hasnain'));
+
+	// Array
+	var arr=["Islamabad","Karachi","Lahore","abbotabad","rawalpindi"];
+	// arr.sort();
+	// var html = "<select> <option>Select City</option>"
+	// for (var i = 0; i < arr.length; i++) {
+	// 	html+="<option>"+arr[i]+"</option>";
+	// }
+	// html+="</select>";
+	// document.write(html);
+
+	//foreach Loop
+
+	arr.forEach(function(val,key){
+		document.write(val);
+		document.write(key);
+		document.write('<br>');
+	});
+
+
+	document.write('<br>');
+
+
+	//object in Javascript
+
+
+	var obj = {
+		fname:"hasnain",
+		lname:"ahmed",
+		age:20,
+		city:["rawalpindi","islamabad"],
+		education:{
+			matric:"Mr cabin high school",
+			intermediate:"Punjab Group of colleges",
+			postGrad:"Comsats university Islamabad",
+		},
+		fullname:function(){
+			return this.fname+' '+this.lname;
+		}
+	};
+
+	delete obj.fname;
+	document.write(obj.fname);
+	document.write('<br>');
+	document.write(obj.age);
+	document.write('<br>');
+	document.write(obj.city[0]);
+	document.write('<br>');
+	document.write(obj.education.matric);
+	document.write('<br>');
+	document.write(obj.education.intermediate);
+	document.write('<br>');
+	document.write(obj.education.postGrad);
+	document.write('<br>');
+	document.write(obj.fullname());
+	document.write('<br>');
+	document.write('fname' in obj);
+	document.write('<br>');
+    document.write('age' in obj);
+	document.write('<br>');
+
+	var obj2 = {
+		fname: "Ahmed",
+		lname: "Hasnain",
+		age:27,
+		DOB: "24th September,1993"
+	};
+
+	document.write('<table border="1">');
+	for(var key in obj2){
+		document.write('<tr>');
+		document.write('<td>'+key+'</td>');
+		document.write('<td>'+obj2[key]+'</td>');
+		document.write('</tr>');
+	}
+	document.write('</table>');
+
+	document.write('<br>');
+	document.write('<br>');
+
+	//Getters and setters
+
+	var obj3 = {
+		fname: "Ahmed",
+		lname: "Hasnain",
+		age:27,
+		DOB: "24th September,1993",
+		get getfullname(){
+			return this.fname+' '+this.lname;
+		},
+
+		set setfullname(par){
+			this.fname=par.fn;
+			this.lname=par.ln;
+		}
+	};
+
+	obj3.setfullname = {fn:"Ali",ln:"Amin"};
+	document.write(obj3.getfullname);
+
+	document.write('<br>');
+	document.write('<br>');
+
+
+	//Constructors
+
+	function User(fn,ln){
+		this.fname = fn;
+		this.lname= ln;
+		// this.fullname= function(){
+		// 	return this.fname+' '+this.lname;
+		// }
+	}
+
+	var obj_1 = new User("Ahmed"," Hasnain");
+	var obj_2 = new User("Ali","Amin");
+	var obj_3 = new User("Asad","Abdi");
+	//obj_3.age=20;
+	User.prototype.age = 20;
+	User.prototype.fullname = function(){
+			return this.fname+' '+this.lname;
+		}
+
+	console.log(obj_1);
+	console.log(obj_2);
+	console.log(obj_3);
+
+	document.write('<br>');
+	document.write('<br>');
+
+	//Events
+	//onclick event
+	//ondblclick
+	//oncontextmenu for rightclick
+	//Key press onkeypress , works only if placed in body
+	//Key press onkeyup , works only if placed in body
+	//Key press onkeydown , works only if placed in body
+	//On Mouse hover onmouseover
+	//On Mouse out onmouseout
+	//On Mouse down onmousedown , mouse click
+	//On Mouse up onmouseup , mouse click
+	//resize onresize
+	//scroll onscroll
+	function callHello(){
+		alert('Hello');
+	}
+
+</script>
+</head>
+<body onscroll="callHello()">
+		<!-- onclick event -->
+	<div onclick="callHello()">Hello event</div>
+	<!-- on Double click event -->
+	<div ondblclick="callHello()">Hello event</div>
+	<!-- oncontextmenu for right click event -->
+	<div oncontextmenu="callHello()">Hello event</div>
+	<!-- oncontextmenu for right click event -->
+	<div onmouseover="callHello()">Hello event</div>
+</body> 
+</html>
+
+

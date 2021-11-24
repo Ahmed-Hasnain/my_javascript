@@ -1,0 +1,27 @@
+<ul id="box">
+	<li>Ahmed</li>
+	<li class="li_class">Hasnain</li>
+	<li>Mughal</li>
+	<li>Shamsy</li>
+</ul>
+
+
+<script>
+
+
+	let liBox= document.getElementById('box');
+	let li= document.createElement('li');
+	li.textContent= "Arsalan";
+	let pos= liBox.firstElementChild ;
+
+	//liBox.appendChild(li);
+	//liBox.insertBefore(li,pos);
+
+	// Replace Li
+	liBox.replaceChild(li,pos);
+	
+
+	
+	
+		
+</script>

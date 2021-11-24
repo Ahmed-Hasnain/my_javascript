@@ -1,0 +1,47 @@
+<ul id="box">
+	<li>Ahmed</li>
+	<li class="li_class">Hasnain</li>
+	<li>Mughal</li>
+	<li>Shamsy</li>
+</ul>
+<input type="text" name="name" id="name">
+<input type="button" name="button" value="Add Li" onclick="add_li()">
+
+<script>
+
+//How to Remove Elements
+	let liBox= document.getElementById('box');
+	let li = liBox.firstElementChild.nextElementSibling.nextElementSibling;
+	//liBox.removeChild(li);
+	//document.body.removeChild(liBox);
+
+	//How to clone a Node
+	let cloneBox = liBox.cloneNode(true);
+	cloneBox.id = "new_box";
+	cloneBox.className = "new_box_class";
+	document.body.appendChild(cloneBox);
+
+
+
+
+function add_li(){
+	let liBox= document.getElementById('box');
+	let newLi= document.createElement('li');
+	newLi.className = "my_li new_li";
+	let name= document.getElementById('name').value;
+	
+	//method 1 of adding content
+	// let liText= document.createTextNode(name);
+	// newLi.appendChild(liText);
+
+	//method 2 of adding content
+	newLi.textContent=name;
+	liBox.appendChild(newLi);
+
+	// console.log(newLi.innerHTML);
+	document.getElementById('name').value = "";
+}
+	
+	
+		
+</script>

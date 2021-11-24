@@ -1,0 +1,73 @@
+<style type="text/css">
+	.container{
+		text-align: left;
+		padding: 30px 10px;
+		margin-right: 30%;
+		margin-left: 30%;
+		border: 2px solid gray;
+	}
+	.remove{
+		display: flex;
+  	    float: right;
+	}
+</style>
+
+
+<div class="container">
+	<h3>To Do List</h3>
+	<input type="text" name="name" id="name" class="input">
+	<input type="button" value="Add" id="btnClick" class="btn" onclick="addTasks()">
+	<div id="err"></div>
+	<ul id="task">
+		
+	</ul>
+</div>
+
+
+<script type="text/javascript">
+
+	function addTasks(){
+		document.getElementById('err').innerHTML= "";
+		let name= document.getElementById('name').value;
+		if (name == '') {
+			
+			document.getElementById('err').innerHTML= "Please Enter a Task...";
+		}
+		else{
+			let task = document.getElementById('task');
+			let li= document.createElement('li');
+			li.textContent= name;
+			li.classname= "my_li";
+
+			let close= document.createElement('a');
+			close.textContent= "x";
+			close.className= "remove";
+			close.href= "javascript:void(0)";
+			//task.appendChild(close);
+
+			let pos = task.firstElementChild;
+			if (pos == null) 
+			{	
+				task.appendChild(li);
+				li.appendChild(close);
+			}
+			else
+			{
+				task.insertBefore(li,pos);
+				li.appendChild(close);
+			}
+			
+		}
+
+		document.getElementById('name').value = '';
+	}
+
+	let btn = document.querySelector('ul');
+	btn.addEventListener('click',function(e){
+		let task = document.getElementById('task');
+		let li= e.target.parentNode;
+		//console.log(li);
+		task.removeChild(li);
+	});
+	
+</script>

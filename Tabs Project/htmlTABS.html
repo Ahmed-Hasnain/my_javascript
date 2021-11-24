@@ -1,0 +1,102 @@
+<style type="text/css">
+	.hide{
+		display: none;
+	}
+	.tab_head{
+		border: 2px solid black;
+		padding: 20px;
+	}
+	.tab_head1{
+		border: 1px solid gray;
+		padding: 3px;
+	}
+	.tab_body_main{
+		border: 2px solid Black;
+		padding: 20px;
+		margin-top: 10px;
+	}
+
+	.tab_body{
+		padding: 10px;
+	}
+
+	.tab_body1{
+		background-color: red;	
+		color: white;
+	}
+
+	.tab_body2{
+		background-color: green;
+		color: white;	
+	}
+
+	.tab_body3{
+		background-color: blue;
+		color: white;	
+	}
+
+    .tab_head_focus{
+    	text-decoration: none;
+    	background-color: gray;
+    	color: white;
+    }
+    
+</style>
+
+
+<div id="tab_head" class="tab_head">
+	<a href="javascript:void(0)" id="tab1" class="tab_head1 tab_head_focus">Tab 1</a>
+	<a href="javascript:void(0)" id="tab2" class="tab_head1 ">Tab 2</a>
+	<a href="javascript:void(0)" id="tab3" class="tab_head1 ">Tab 3</a>
+</div>
+
+<div class="tab_body_main">
+	<div id="box_tab1" class="tab_body tab_body1">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</div>
+
+	<div id="box_tab2" class="tab_body tab_body2 hide">
+		Tab 2 Data Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</div>
+
+	<div id="box_tab3" class="tab_body tab_body3 hide">
+		Tab 3 Data Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</div>
+</div>
+
+<script type="text/javascript">
+	let tab = document.querySelector('#tab_head');
+
+	tab.addEventListener('click',function(e){
+		let id = e.target.id;
+		
+		let ele = document.querySelectorAll('.tab_body');
+		for (var i = 0; i < ele.length; i++) {
+			ele[i].classList.add('hide');
+		}
+		document.querySelector('#box_'+id).classList.remove('hide');
+
+
+		let ele1 = document.querySelectorAll('.tab_head1');
+		for (var i = 0; i < ele1.length; i++) {
+			ele1[i].classList.remove('tab_head_focus');
+		}
+		document.querySelector('#'+id).classList.add('tab_head_focus');
+
+	});
+</script>

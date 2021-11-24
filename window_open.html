@@ -1,0 +1,19 @@
+<div>Hello Window</div> 
+<a href="javascript:void(0)" onclick="openTab()"> Open Google Tab </a>
+<a href="javascript:void(0)" onclick="closeTab()"> Close Google Tab </a>
+
+<script type="text/javascript">
+	let op;
+	function openTab(){
+		//window.open("https://google.com");
+		let url= "https://google.com";
+		let name= "Tab";
+		let options= "width:50;height:50";
+		op = window.open(url,name,options); 
+	}
+
+	function closeTab(){
+		op.close();
+	}
+	
+</script>

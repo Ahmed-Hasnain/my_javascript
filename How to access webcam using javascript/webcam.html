@@ -1,0 +1,19 @@
+<video id="video" autoplay="true"></video>
+<div id="err"></div>
+
+<script type="text/javascript">
+	let video = document.getElementById('video');
+
+	if (navigator.mediaDevices.getUserMedia) {
+		navigator.mediaDevices.getUserMedia({video:true}).then(function(s){
+			video.srcObject=s;
+		})
+		.catch(function(err){
+			document.getElementById('err').innerHTML=err;
+		});
+	}
+	else{
+		console.log('No');	
+	}
+
+</script>

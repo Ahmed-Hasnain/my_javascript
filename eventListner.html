@@ -1,0 +1,20 @@
+<input type="button" name="click" value="click me" id="btn">
+
+<script type="text/javascript">
+
+	let btn = document.getElementById('btn');
+	btn.addEventListener('click',test);
+	btn.addEventListener('click',test1);
+
+	function test(){
+		console.log('Test Click');
+		let btn = document.getElementById('btn');
+		btn.removeEventListener('click',test);
+	}
+
+	function test1(){
+		console.log('Test1 Click');
+		let btn = document.getElementById('btn');
+		btn.removeEventListener('click',test1);
+	}
+</script>

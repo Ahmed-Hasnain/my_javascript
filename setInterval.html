@@ -1,0 +1,29 @@
+<div id="box"></div>
+
+<script type="text/javascript">
+	setInterval(incWidth,10);
+	let x=1;
+	function incWidth(){
+		x++;
+		let box = document.getElementById('box');
+		box.style.width=x+ "px";
+	}
+	/*let myInterval = setInterval(test,50);
+	let x=1;
+
+	function test(){
+		if (x==299) {
+			clearInterval(myInterval);
+		}
+		x++;
+		document.getElementById('box').innerHTML= x;
+	} */
+</script>
+
+<style type="text/css">
+	#box{
+		background: red;
+		width: 1px;
+		height: 50px;
+	}
+</style>
